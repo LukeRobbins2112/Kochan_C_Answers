@@ -1,0 +1,19 @@
+#include <Stdio.h>
+
+int isPrime(int num){
+
+  _Bool isPrime = 1;
+  int lastToCheck = squareRoot(num);
+    
+    for (int d = 2; d < lastToCheck; d++){
+      if (p % d == 0)
+	isPrime = 0;
+    }
+
+    return isPrime;
+
+}
+
+int main(){
+
+}

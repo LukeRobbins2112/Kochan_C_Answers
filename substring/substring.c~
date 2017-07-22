@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+void substring(char *source, int start, int count, char *result){
+
+  int i;
+  int pos = 0;
+  for (i = start; source[i] != '\0' && pos < count; i++){
+    result[pos] = source[i];
+    pos++;
+  }
+  result[pos+1] = '\0';
+
+}
+
+
+int main(){
+
+  char source[] = "character";
+  char result[20];
+
+  substring(source, 4, 3, result);
+
+  printf("The substring is %s\n", result);
+
+  return 0;
+  
+}

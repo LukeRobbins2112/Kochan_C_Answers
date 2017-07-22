@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main(){
+
+  float accumulator = 0;
+  char operator;
+  float input;
+
+  printf("Begin calculations\n");
+  scanf("%f %c", &input, &operator);
+
+  while (operator != 'E'){
+    
+  switch (operator){
+
+  case 'S':
+    accumulator = input;
+    break;
+  case '+':
+    accumulator += input;
+    break;
+  case '-':
+    accumulator -= input;
+    break;
+  case '*':
+    accumulator *= input;
+    break;
+  case '/':
+    if (input == 0)
+      printf("Division by zero.\n");
+    else
+      accumulator /= input;
+    break;
+  default:
+    printf("Invalid operator");
+    
+  }
+  
+  printf("= %f\n", accumulator);
+  scanf("%f %c", &input, &operator);
+
+  }
+  
+  printf("= %f\n", accumulator);
+  printf("End of Calculations\n");
+  return 0;
+}
+
+  

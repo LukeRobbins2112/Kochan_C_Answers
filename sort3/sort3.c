@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+void sort3(int *nums){
+
+  int i, j, temp;
+  
+  
+  for (i = 0; i < 2; i++){
+
+    for (j = i + 1; j < 3; j++){
+      if (*(nums+i) > *(nums+j)){
+	temp = *(nums+i);
+	*(nums+i) = *(nums+j);
+	*(nums+j) = temp;
+      }
+    }
+
+  }
+
+}
+
+
+int main(){
+
+  int num1, num2, num3;
+
+  printf("Please enter three numbers, in any order: ");
+  scanf("%d%d%d", &num1, &num2, &num3);
+
+  int *nums;
+  *nums = num1;
+  *(nums + 1) = num2;
+  *(nums + 2) = num3;
+
+  printf("The unsorted array: ");
+  for (int i = 0; i < 3; i++){
+    printf("%d ", *(nums + i));
+  }
+
+  sort3(nums);
+
+  printf("The sorted array: ");
+  for (int i = 0; i < 3; i++){
+    printf("%d ", *(nums + i));
+  }
+
+  return 0;
+  
+}

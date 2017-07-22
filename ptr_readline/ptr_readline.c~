@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+void readLine(char *buffer){
+
+  char c;
+  int i = 0;
+
+  do{
+    c = getchar();
+
+    printf("Get char worked\n");
+    
+    *(buffer + i) = c;
+
+    printf("*(buffer + i) worked\n");
+    
+    ++i;
+  }
+  while (c != '\n');
+
+  *(buffer + i - 1) = '\0';
+
+  printf("*(bugger + i - 1) worked\n");
+}
+
+
+int main(){
+
+  int i;
+  char line[81];
+
+  for (i = 0; i < 3; i++){
+    readLine(line);
+    printf("%s\n\n", line);
+  }
+
+  return 0;
+}

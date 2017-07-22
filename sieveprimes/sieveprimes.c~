@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main(){
+
+  int numbers[150];
+  int primes[75];
+  int i;
+  int j;
+  int n = 150;
+  int p = 75;
+  
+  for (int i = 0; i < n; i++){
+    numbers[i] = i+2;
+  }
+
+  for (int i = 0; i < p; i++){
+    primes[i] = 0;
+  }
+
+  for (int i = 0; i < n; i++){
+    if (numbers[i] != -1){
+      for (j = 2*numbers[i]-2; j < n; j+=numbers[i]){
+	numbers[j] = -1;
+      }
+    }
+  }
+
+  j = 0;
+
+  for (i = 0; i < n && j < p; i++){
+    if (numbers[i] != -1)
+      primes[j++] = numbers[i];
+  }
+
+  for (i = 0; i < p; i++)
+    if (primes[i] = 0)
+      break;
+    printf("Primes: %d\n", primes[i]);
+  
+  return 0;
+
+}
